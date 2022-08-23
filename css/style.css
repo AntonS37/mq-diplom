@@ -75,6 +75,8 @@ div.hidden {
     padding: 47px 30px 55px;
     background-color: white;
     max-width: 390px;
+    max-height: 100vh;
+    overflow: auto;
 }
 
 .feedback-title {
@@ -529,7 +531,8 @@ a {
 /*search*/
 .search {
     margin-top: 55px;
-    display: flex;    
+    display: flex;
+    max-width: 99%;
 }
 
 .search-group {
@@ -548,7 +551,7 @@ a {
     height: 47px;
     width: 100%;
     padding-left: 17px;
-    padding-right: 17px;
+    padding-right: 17px;    
   
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -571,8 +574,9 @@ button {
 }
 
 .search-button {
-    display: inline-block;
-    width: 47px;
+    display: block;
+    max-width: 47px;
+    min-width: 47px;
     height: 47px;
     background-image: url("../svg/search.svg");
     background-repeat: no-repeat;
@@ -584,6 +588,7 @@ button {
 
 .search-button:hover {
     background-color: #323232;
+    border: none;
 }
 
 /*mailing*/
@@ -799,7 +804,19 @@ button {
     flex-direction: column;
     align-items: center;
 }
-  
+
+picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.craft-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .craft-card {
     width: 300px;
     margin-top: -14px;
@@ -972,6 +989,10 @@ button {
         margin: 25px 0 9px;
     }
 
+    .header {
+        margin-right: 0;
+    }
+
     .header-menu-list {
         display: none;
     }
@@ -1005,6 +1026,27 @@ button {
     }
 }
 
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: portrait) {
+    .trend-card-wrapper {
+        flex-basis: 49%;
+        flex-grow: 1;
+        min-height: 247px;
+        padding: 15px 19px;
+        margin-top: 0; 
+        margin-bottom: 4px;
+    }
+  
+   .trend-card-wrapper:nth-child(2n+1) {
+        margin-right: 4px;
+    }
+  
+    .trend-cards {
+        margin-top: 18px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
 @media (min-width: 641px) and (max-width: 1199px) {
 
     .header {
@@ -1025,36 +1067,14 @@ button {
     .header-title {
         max-width: 650px;
         margin-top: 85px;
-    }
-  
-    .header-title {
         font-size: 40px;
         line-height: 1.4;
     }
-  
+    
     .trends {
         margin-top: 45px;
     }
-  
-    .trend-card-wrapper {
-        flex-basis: 49%;
-        flex-grow: 1;
-        min-height: 247px;
-        padding: 15px 19px;
-        margin-top: 0; 
-        margin-bottom: 4px;
-    }
-  
-   .trend-card-wrapper:nth-child(2n+1) {
-        margin-right: 4px;
-    }
-  
-    .trend-cards {
-        margin-top: 18px;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-  
+       
     .trend-card {
         padding: 29px 29px;
     }
@@ -1076,7 +1096,7 @@ button {
         font-size: 17px;
         line-height: 1.3;        
     }
-  
+
     .page-wrapper {
         margin: 47px auto 0 auto;
     }
@@ -1088,7 +1108,7 @@ button {
     .post-img {
         width: 100%;
         min-width: 0;
-        max-width: 380px;
+        /* max-width: 380px; */
     }
     
     .post-text {
@@ -1197,6 +1217,42 @@ button {
     }
 }
 
+@media (max-width: 640px) and (orientation: portrait) {
+  
+    .trend-cards {
+        flex-direction: column;
+    }
+  
+    .trend-card-wrapper {
+        width: 100%;
+        min-height: 232px;
+        margin-top: 3px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+    .trend-card-wrapper {
+        flex-basis: 49%;
+        flex-grow: 1;
+        min-height: 247px;
+        padding: 15px 19px;
+        margin-top: 0; 
+        margin-bottom: 4px;
+    }
+  
+   .trend-card-wrapper:nth-child(2n+1) {
+        margin-right: 4px;
+    }
+  
+    .trend-cards {
+        margin-top: 18px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 640px) {
 
     .feedback-form {
@@ -1213,6 +1269,7 @@ button {
   
     .popup-container {
         margin: 0 15px;
+        max-width: 330px;
     }
   
     .header {
@@ -1243,7 +1300,7 @@ button {
         font-size: 26px;
         line-height: 1.4;
     }
-  
+
     .trends {
         margin-top: 40px;
     }
@@ -1255,33 +1312,25 @@ button {
     .trends-title:after {
         margin: 8px auto 20px;
     }
-  
-    .trend-cards, .page-wrapper, .post, .craft-cards {
-        flex-direction: column;
-    }
-  
-    .trend-card-wrapper {
-        width: 100%;
-        min-height: 232px;
-        margin-top: 3px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-  
+
     .trend-card {
-      padding: 26px 20px;
+        padding: 26px 20px;
     }
   
     .trend-card-title {
-      margin-top: 9px;
-      font-size: 16px;
-      line-height: 1.25;
+        margin-top: 9px;
+        font-size: 16px;
+        line-height: 1.25;
     }
 
     .trend-card-title-link {
         font-size: 16px;
     }
   
+    .page-wrapper, .post, .craft-cards {
+        flex-direction: column;
+    }
+      
     .page-wrapper {
       margin-top: 45px;
     }
@@ -1297,6 +1346,7 @@ button {
     .post-img {
         min-width: 0;
     }
+    
     .post-tags {
         margin-bottom: 8px;
     }
