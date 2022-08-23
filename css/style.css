@@ -856,17 +856,17 @@ picture {
 }
   
 .price {
+    font-family: OpenSans-Bold;
     font-size: 20px;
-    font-weight: bold;
     margin-bottom: 4px;
 }
   
 .old-price {
+    font-family: OpenSans-Bold;
     position: absolute;
     left: 0;
     bottom: 25px;
     font-size: 14px;
-    font-weight: bold;
     text-decoration: line-through;
 }
   
@@ -954,7 +954,6 @@ picture {
     color: #999999;
     text-decoration: none;
     font-size: 12px;
-    font-weight: bold;
 }
 
 @media (min-width: 1200px) {
@@ -1099,6 +1098,7 @@ picture {
 
     .page-wrapper {
         margin: 47px auto 0 auto;
+        padding: 0 35px 0 35px;
     }
   
     .post {
